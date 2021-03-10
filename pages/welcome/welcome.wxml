@@ -1,0 +1,13 @@
+
+<view class="container">
+  <!-- 使用自定义组件 -->
+  <l-avatar
+    class="l-avatar"
+    size="200"
+    open-data="{{['userAvatarUrl','userNickName']}}"
+    placement="bottom"
+  />
+  <view class="journey-container">
+    <text class="journey">开启小程序之旅</text>
+  </view>
+</view>
