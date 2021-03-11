@@ -13,12 +13,10 @@
 		<text class="post-content">{{res.content}}</text>
 
 		<view class="post-like">
-			<!-- <image class="post-like-image" src="/images/icon/chat.png"></image> -->
+			<!-- l-icon是我们给LinUi组件库的icon的组件起的名字，name属性可以决定使用不同的icon -->
 			<l-icon class="post-like-image" color="#666" size="28" name="favor" />
 			<text class="post-like-font">{{item.collection}}</text>
-			<!-- <image class="post-like-image" src="/images/icon/view.png"></image> -->
 			<l-icon class="post-like-image" color="#666" size="32" name="eye" />
 			<text class="post-like-font">{{item.reading}}</text>
-
 		</view>
 	</view>

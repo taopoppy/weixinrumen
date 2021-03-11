@@ -13,17 +13,8 @@ Page({
 
   /**
    * 生命周期函数--监听页面加载
-   * 钩子函数 hook function
-   * 顺序
-   * 条件渲染 列表渲染
    */
   async onLoad(options) {
-    // setData
-    // 更新
-    // 创建+更新
-    // JSON
-    // ES6
-
     wx.setStorageSync('flag', 2)
 
     const flag =await wx.getStorage({

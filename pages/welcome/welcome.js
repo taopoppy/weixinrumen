@@ -8,11 +8,25 @@ Page({
 
   },
 
+  onTap:function(params) {
+    wx.switchTab({
+      url:"/pages/posts/posts"
+    })
+  },
+
+  onViewTap:function(params) {
+    console.log("on tap View")
+  },
+
+  onTextTap:function (params) {
+    console.log("on tap Text")
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log("这是Welcome，OnLoad")
   },
 
   /**
@@ -40,7 +54,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log("这是Welcome，Unload")
   },
 
   /**

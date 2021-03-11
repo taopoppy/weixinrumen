@@ -12,7 +12,7 @@
 		"minified": true,
 		"newFeature": false,
 		"coverView": true,
-		"nodeModules": false,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -32,8 +32,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.2",
-	"appid": "wx839f2f2af368e0b7",
-	"projectname": "weixinrumen",
+	"appid": "wx4fac522fb61664c7",
+	"projectname": "flower",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -69,6 +69,35 @@
 					"id": -1,
 					"name": "pages/posts/posts",
 					"pathName": "pages/posts/posts",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/post-detail/post-detail",
+					"pathName": "pages/post-detail/post-detail",
+					"query": "pid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/movies/movies",
+					"pathName": "pages/movies/movies",
+					"query": "pid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/more-movie/more-movie",
+					"pathName": "pages/more-movie/more-movie",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/movie-detail/movie-detail",
+					"pathName": "pages/movie-detail/movie-detail",
+					"query": "mid=305",
 					"scene": null
 				}
 			]
