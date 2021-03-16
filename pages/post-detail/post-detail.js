@@ -20,7 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const postData = postList[options.pid]
+    const postData = postList[options.pid] // 根据pid拿到详情页要显示的数据
     this.data._pid = options.pid
     const postsCollected = wx.getStorageSync('posts_collected')
     console.log(postsCollected)
