@@ -8,10 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postData:{},
-    collected:false,
+    postData:{}, // 文章对象
+    collected:false, // 文章是否被收藏
     isPlaying:false,
-    _pid:null,
+    _pid:null, // 具体文章的pid，在UI中不显示，所以只用在js文件中，使用下划线标注
     _postsCollected:{},
     _mgr:null
   },
@@ -21,7 +21,7 @@ Page({
    */
   onLoad: function (options) {
     const postData = postList[options.pid] // 根据pid拿到详情页要显示的数据
-    this.data._pid = options.pid
+    this.data._pid = options.pid // this.data._pid可以直接赋值，因为不需要根据这个字段渲染UI
     const postsCollected = wx.getStorageSync('posts_collected')
     console.log(postsCollected)
     
@@ -106,18 +106,11 @@ Page({
     })
 
     wx.setStorageSync('posts_collected',postsCollected)
-
+    // 根据是否收藏修改消息提示框中的内容
     wx.showToast({
       title: this.data.collected?'收藏成功':'取消收藏',
       duration: 3000
     })
-
-    // const result =await wx.showModal({
-    //   title:'是否收藏文章'
-    // })
-    // if(result.confirm){
-
-    // }
   },
 
   /**
