@@ -10,7 +10,7 @@ Page({
   data: {
     postData:{}, // 文章对象
     collected:false, // 文章是否被收藏
-    isPlaying:false,
+    isPlaying:false, // 是否在播放音乐
     _pid:null, // 具体文章的pid，在UI中不显示，所以只用在js文件中，使用下划线标注
     _postsCollected:{},
     _mgr:null
@@ -48,7 +48,9 @@ Page({
     // mgr.onStop(this.onMusicStop)
     mgr.onPause(this.onMusicStop)
   },
-
+  /**
+   * 小程序后台播放的音乐是否与当前页面要播放的音乐一致
+   */
   currentMusicIsPlaying(){
     if(app.gIsPlayingMusic && app.gIsPlayingPostId === this.data._pid ){
       return true
@@ -56,37 +58,44 @@ Page({
     return false
   },
 
+  /**
+   * 音乐播放
+   */
   onMusicStart(event){
     const mgr = this.data._mgr
     // mgr.onPlay(()=>{
     //   console.log(123)
     // })
-    const music = postList[this.data._pid].music
+    const music = postList[this.data._pid].music // 拿到音乐数据
 
-    mgr.src = music.url
-    mgr.title = music.title
-    mgr.coverImgUrl = music.coverImg
+    mgr.src = music.url // 给音乐对象赋值音乐url，设置了src之后会自动播放（必须
+    mgr.title = music.title // 给音乐对象赋值音乐标题（必选）
+    mgr.coverImgUrl = music.coverImg // 给音乐对象赋值音乐图片
 
-    app.gIsPlayingMusic = true
-    app.gIsPlayingPostId = this.data._pid
+    app.gIsPlayingMusic = true // 正在播放音乐记录到全局变量中
+    app.gIsPlayingPostId = this.data._pid // 正在播放的音乐的id也记录在全局变量中
     
     this.setData({
-      isPlaying:true
+      isPlaying:true // 修改isPlaying
     })
   },
 
+  /**
+   * 音乐暂停
+   */
   onMusicStop(event){
-    const mgr = this.data._mgr
-    mgr.pause()
-    app.gIsPlayingMusic = false
-    app.gIsPlayingPostId = -1
+    const mgr = this.data._mgr // 拿到音乐对象
+    mgr.pause() // 暂停
+    app.gIsPlayingMusic = false // 修改全局变量
+    app.gIsPlayingPostId = -1 // 修改全局变量
     this.setData({
-      isPlaying:false
+      isPlaying:false // 修改isPlaying
     })
-    // 音乐停止 - start
-    // 音乐播放 - stop
   },
 
+  /**
+   * 分享按钮
+   */
   async onShare(event){
     const result = await wx.showActionSheet({
       itemList: ['分享到QQ','分享到微信','分享到朋友圈']
@@ -94,6 +103,9 @@ Page({
     console.log(result)
   },
 
+  /**
+   * 收藏按钮
+   */
   async onCollect(event){
 
     const postsCollected = this.data._postsCollected
