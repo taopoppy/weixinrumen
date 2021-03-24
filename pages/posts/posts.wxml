@@ -16,7 +16,8 @@
 
 
 <block wx:for="{{postList}}" wx:key="index"  wx:for-item="item" wx:for-index="idx">
-	<post bind:posttap = "onGoToDetail" res="{{item}}"/>
+	<!-- 父组件监听posttap事件，并使用onGoToDetail函数处理 -->
+	<post bind:posttap="onGoToDetail" res="{{item}}"/>
 </block>
 
 </view>

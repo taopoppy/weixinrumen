@@ -9,6 +9,7 @@ Page({
   },
 
   onTap:function(params) {
+    // 跳转到属于tabBar的页面必须使用wx.switchTab()方法
     wx.switchTab({
       url:"/pages/posts/posts"
     })
