@@ -10,6 +10,7 @@
   margin-bottom: 22rpx;
 }
 
+/* 字数超越省略，前提是其所在的容器宽度要固定*/
 .title{
   white-space: nowrap;
   text-overflow: ellipsis;

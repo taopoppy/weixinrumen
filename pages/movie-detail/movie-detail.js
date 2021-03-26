@@ -46,9 +46,11 @@ Page({
     })
   },
 
+  // 预览图片
   onViewPost(event){
+    console.log(this.data.movie.image)
     wx.previewImage({
-      urls: [this.data.movie.images.large],
+      urls: [this.data.movie.image],
     })
   },
 

@@ -1,13 +1,19 @@
 <view bind:tap="onGoToDetail" class="container">
+    <!-- 电影海报 -->
     <image class="poster" src="{{movie.images.large}}"></image>
+    
+    <!-- 电影名称 -->
     <text class="title">{{movie.title}}</text>
+    
+    <!-- 电影评分部分 -->
     <view class="rate-container">
-    <l-rate disabled="{{true}}" size="22" score="{{movie.rating.stars/10}}" />
-
-    <text class="score">{{movie.rating.average}}</text>
+        <l-rate
+            disabled="{{true}}"
+            size="22"
+            score="{{movie.rating.stars/10}}"
+        />
+        <text class="score">{{movie.rating.average}}</text>
     </view>
 </view>
-
-<!-- 1. wxs es5 -->
 
 

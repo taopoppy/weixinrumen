@@ -6,5 +6,5 @@ App({
   },
   gIsPlayingMusic:false,
   gIsPlayingPostId:-1,
-  gBaseUrl:"http://t.talelin.com/v2/movie/"
+  gBaseUrl:"http://t.talelin.com/v2/movie/" // 全局变量，请求基地址
 })

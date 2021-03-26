@@ -7,7 +7,6 @@
   <block wx:for="{{movies}}" wx:key="index">
     <movie movie="{{item}}" />
   </block>
-
   </view>
 </view>
 

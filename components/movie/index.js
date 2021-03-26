@@ -3,10 +3,8 @@ Component({
   /**
    * 组件的属性列表
    */
-
-
   properties: {
-    movie:Object
+    movie:Object  // 单个电影的组件
   },
 
   /**
@@ -21,7 +19,6 @@ Component({
    */
   methods: {
     onGoToDetail(event){
-      // console.log(this.properties.movie)
       const mid = this.properties.movie.id
       wx.navigateTo({
         url: '/pages/movie-detail/movie-detail?mid=' + mid

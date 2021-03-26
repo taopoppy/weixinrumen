@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const type = options.type
+    const type = options.type // 拿到页面传递来的类型数据
     this.data._type = type
     wx.request({
       url: app.gBaseUrl + type,
@@ -78,6 +78,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    console.log("用户正在下拉")
     wx.request({
       url: app.gBaseUrl + this.data._type,
       data:{
@@ -97,9 +98,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // [1,2,3...... 12,13,]
-    // [0,1,2....11] + [12,13....23] + [24...35] + [36...47]
-    wx.showNavigationBarLoading()
+    wx.showNavigationBarLoading() // 显示加载
     wx.request({
       url: app.gBaseUrl + this.data._type,
       data:{
@@ -111,7 +110,7 @@ Page({
         this.setData({
           movies:this.data.movies.concat(res.data.subjects)
         })
-        wx.hideNavigationBarLoading()
+        wx.hideNavigationBarLoading() // 隐藏加载
       }
     })  
   },

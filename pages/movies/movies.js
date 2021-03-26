@@ -2,16 +2,15 @@
 
 const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    inTheaters:[],
-    comingSoon:[],
-    top250:[],
-    searchResult:false,
-    searchData:[]
+    inTheaters:[], // 正在热映
+    comingSoon:[], // 即将上映
+    top250:[], // 豆瓣前250
+    searchResult:false, // 是否有搜索结果
+    searchData:[] // 搜索数据结果
   },
 
   /**
@@ -57,6 +56,7 @@ Page({
     })
   },
 
+  // 查看当前模块更多电影的数据
   onGotoMore(event){
     console.log(event)
     const type = event.currentTarget.dataset.type
@@ -65,6 +65,7 @@ Page({
     })
   },
 
+  // 进行搜索
   onConfirm(event){
     this.setData({
       searchResult:true
@@ -82,6 +83,7 @@ Page({
     })
   },
 
+  // 退出搜索
   onSearchCancel(event){
     this.setData({
       searchResult:false
