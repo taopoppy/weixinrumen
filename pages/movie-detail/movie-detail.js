@@ -20,9 +20,6 @@ Page({
       success:(res)=>{
         console.log(res.data)
         this.processMovieData(res.data)
-        // this.setData({
-        //   movie:res.data
-        // })
       }
     })
   },

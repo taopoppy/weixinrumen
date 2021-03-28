@@ -48,6 +48,7 @@ Page({
         title = '豆瓣Top250'
         break
     }
+    // 通过js设置Page的标题，一般是复用页面要根据参数的不同而显示不同的标题
     wx.setNavigationBarTitle({
       title: title,
     })
@@ -89,7 +90,7 @@ Page({
         this.setData({
           movies:res.data.subjects
         })
-        wx.stopPullDownRefresh()
+        wx.stopPullDownRefresh() // 主动去关闭下拉刷新的动画效果
       }
     })
   },

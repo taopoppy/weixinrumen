@@ -39,11 +39,11 @@ Page({
 
 
   onGoToDetail(event){
-      // enent为事件对象，然后有很多属性，event.currentTarget为当前组件的一些属性值集合，具体请见：https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html#currenttarget
-      const pid = event.currentTarget.dataset.postId | event.detail.pid
-      wx.navigateTo({
-        url:'/pages/post-detail/post-detail?pid=' + pid
-      })
+    // enent为事件对象，然后有很多属性，event.currentTarget为当前组件的一些属性值集合，具体请见：https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html#currenttarget
+    const pid = event.currentTarget.dataset.postId | event.detail.pid
+    wx.navigateTo({
+      url:'/pages/post-detail/post-detail?pid=' + pid
+    })
   },
 
   /**
